@@ -1,0 +1,332 @@
+
+/* VARIABLES */
+
+:root {
+    --white: #FFFFFF;
+    --white-soft: #DDFFFF;
+    --blue-light: #46D6DD;
+    --blue: #5C9DDC;
+    --blue-dark: #27415C;
+    --black: #120F18;
+
+}
+
+
+/* TEXTOS SETTINGS */
+
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2em;
+    letter-spacing: 0;
+    vertical-align: middle;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2em;
+    letter-spacing: 0;
+    vertical-align: middle;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2em;
+    letter-spacing: 0;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2em;
+    letter-spacing: 0;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+}
+
+.small-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+}
+
+/* BOTONES SETTINGS */
+
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--white);
+    background-color: var(--blue-light);
+    border: none;
+    border-radius: 16px;
+    padding: 16px 32px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: var(--blue-dark);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    max-width: 1440px;
+    padding: 32px;
+    gap: 64px;
+}
+
+
+
+
+
+/* SECCIÓN HEADER */
+.seccion-header-detalles {
+    display: none;
+}
+
+.seccion-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+}
+
+.seccion-header div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+}
+
+.mascara {
+    position: relative;
+
+}
+
+.mascara-telefono {
+    display: none;
+}
+
+.telefono {   
+    width: 430px;
+    height: auto; 
+    object-fit: cover;
+    mask-image: url('/img/mask.svg');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    -webkit-mask-image: url('/img/mask.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+
+}
+
+
+
+/* SECCIÓN INFO PHONES */
+
+.seccion-info h2{
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+
+.collapse-summary::-webkit-details-marker {
+    display: none;
+}
+
+.collapse-summary::marker {
+    display: none;
+}
+
+.collapse-details{
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+summary {
+    padding: 16px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--blue-dark);
+    background-color: white;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+
+}
+
+.collapse-details[open] summary {
+    background-color: var(--white-soft);
+    border-radius: 8px 8px 0 0;
+
+}
+
+.collapse-content{
+    padding: 16px;
+} 
+
+.collapse-content img{
+    height: 250px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+} 
+
+
+.collapse-arrow {
+    transform: rotate(270deg);
+    transition: transform 0.3s ease;
+}
+
+.collapse-details[open] .collapse-arrow {
+    transform: rotate(360deg);
+}
+
+
+
+/* SECCIÓN INFO DESKTOP */
+
+.tab-radio, .tab-label, .menu-items, .wrapper-desktop .laptop, .wrapper-desktop .titulo  {
+    display: none;
+}
+
+
+
+/*
+ Media query // Tablet 
+*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .collapse-content img{
+        height: 100%;
+        width: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+    } 
+}
+
+
+
+/*
+ Media query // Desktop
+*/
+
+@media (min-width: 1024px) {
+
+    main {
+        padding: 64px;
+    }
+
+    .seccion-header-detalles {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .seccion-header{
+        padding: 16px;
+        flex-direction: row;
+    }
+    .seccion-header div{
+        align-items: flex-start;
+        text-align: left;
+    }
+    .seccion-header .texto{
+        width: 50%;
+    } 
+    .seccion-header .mascara{
+        width: 50%;
+    }
+    .seccion-header .telefono{
+        width: 100%;
+    }
+    .collapse-details, .seccion-info .titulo{
+        display: none;
+    }
+
+    .tab-label, .menu-items, .wrapper-desktop .laptop,.wrapper-desktop .titulo  {
+        display: block;
+    }
+    .seccion-info h2{
+        text-align: left;
+    }
+    .wrapper-desktop {
+        flex-direction: row;
+        display: flex;
+        gap: 64px;
+        max-width: 1200px;
+    }
+    .tabs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .wrapper-desktop .laptop, .wrapper-desktop .tabs{
+        width: 50%;
+    }
+
+    .tab-label {
+        display: flex;
+        border-radius: 8px;
+        padding: 16px;      
+        cursor: pointer;
+        transition: all 0.3s ease;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--blue-dark);
+    }
+    .tab-label:hover {
+        border-color: var(--white-soft);
+        background-color: var(--white-soft);
+    }
+    .laptop img {
+        border-radius: 16px;
+    }
+           
+    
+}
